@@ -17,7 +17,7 @@ node{
     }
    sh 'docker push aksharasrimadhu/myweb:0.0.2'
    } 
- stage('Nexus Image Push'){
+   stage('Nexus Image Push'){
    sh "docker login -u admin -p admin123 65.1.91.193:8083"
    sh "docker tag aksharasrimadhu/myweb:0.0.2 65.1.91.193:8083/akshu:1.0.0"
    sh 'docker push 65.1.91.193:8083/akshu:1.0.0'
@@ -36,6 +36,6 @@ node{
 	        withSonarQubeEnv('sonar') { 
 	          sh "${mvnHome}/bin/mvn sonar:sonar"
 	        }
-} 
-}
-}
+  } 
+  }
+  }
